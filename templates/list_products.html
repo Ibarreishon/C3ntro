@@ -8,8 +8,8 @@
             <div class="card-body">
                 {{ p.nombre }}
                 <div class="text-white-50 small">$ {{ p.precio }}</div>
-                <div class="text-white-50 small">$ {{ p.descripcion }}</div>
-                <div class="text-white-50 small">$ {{ p.stock }}</div>
+                <div class="text-white-50 small">{{ p.descripcion }}</div>
+                <div class="text-white-50 small">{{ p.stock }}</div>
             </div>
         </div>
     {% endfor %}

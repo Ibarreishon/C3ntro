@@ -30,3 +30,16 @@ class PedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
         fields = ['id', 'fecha', 'productos']
+
+    def create(self, validated_data):
+        productos = validated_data.pop('productos')
+        producto = []
+        for p in productos:
+            try:
+                pr = Producto.objects.get(nombre=p.get('nombre'))
+            except Producto.DoesNotExist:
+                raise serializers.ValidationError("Producto inexistente")
+            producto.append(pr)
+        pedido = Pedido.objects.create()
+        pedido.productos.set(producto)
+        return pedido

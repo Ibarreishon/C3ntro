@@ -9,6 +9,7 @@ class Pedido(models.Model):
     class Meta:
         ordering = ('-fecha',)
 
+
 class Producto(models.Model):
     """
     Modelo de Producto con los campos solicitados en el documento
@@ -17,7 +18,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=6, decimal_places=2)
     descripcion = models.TextField()
     stock = models.IntegerField(default=0)
-    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name='productos')
+    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name='productos', null=True)
 
     class Meta:
         ordering = ('-nombre',)
