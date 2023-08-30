@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="text-center">
+        <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
+    </div>
+    <form class="user" method="post" style="text-align: center">
+        {% csrf_token %}
+        {% if error_message %}
+            <div class="row"
+                 style="background-color: #D82600; margin-bottom: 5%; border-radius: 15px;">
+                <div class="col-12">
+                    <p style="color: white; font-size: 12px;margin-top: 3%; text-align: center;">
+                        <b>{{ error_message }}</b>
+                    </p>
+                </div>
+            </div>
+        {% endif %}
+        <div class="col-sm-6 mb-3 mb-sm-0" style="margin-bottom: 1%!important;padding-left: 15%">
+            <input name="username" type="text" class="form-control form-control-user"
+                   placeholder="Ingresa tu usuario">
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0"  style="margin-bottom: 1%!important;padding-left: 15%">
+            <input name="password" type="password" class="form-control form-control-user"
+                   placeholder="Ingresa tu contraseña">
+        </div>
+        <button class="btn btn-primary btn-user btn-block">Iniciar sesión</button>
+    </form>
+{% endblock %}

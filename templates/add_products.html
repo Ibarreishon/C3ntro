@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="text-center">
+        <h1 class="h4 text-gray-900 mb-4">AGREGAR PRODUCTOS</h1>
+    </div>
+    <form method="post" style="text-align: center">
+        {% csrf_token %}
+        {% if producto %}
+            <h2>Se agrego con exito el producto: {{ producto }} </h2>
+        {% endif %}
+         <div class="col-sm-6 mb-3 mb-sm-0" style="margin-bottom: 1%!important;padding-left: 15%">
+            <input name="nombre" type="text" class="form-control form-control-user"
+                   placeholder="Nombre del producto">
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0" style="margin-bottom: 1%!important;padding-left: 15%">
+            <input name="precio" type="number" class="form-control form-control-user"
+                   placeholder="Precio del producto" step=".01">
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0" style="margin-bottom: 1%!important;padding-left: 15%">
+            <input name="descripcion" type="text" class="form-control form-control-user"
+                   placeholder="Descripcion del producto">
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0" style="margin-bottom: 1%!important;padding-left: 15%">
+            <input name="stock" type="number" class="form-control form-control-user"
+                   placeholder="Stock del producto">
+        </div>
+        <button class="btn btn-primary btn-user btn-block">Agregar producto</button>
+    </form>
+{% endblock %}

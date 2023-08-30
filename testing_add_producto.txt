@@ -1,0 +1,9 @@
+Agregar producto
+1) Se accede al endpoint http://127.0.0.1:8000/app/login/
+2) Se accede con usuario y password (utilizar superuser de python)
+3) Al dar usuario y contraseña correctos se mostrara el listado de productos
+4) En la barra superior aparecera el apartado "Agregar", dar click
+5) Llenar el formulario con los datos necesarios para el alta de un producto.
+6) Dar click en el boton "Agregar producto"
+7) El sistema en la cabecera mostrara el mensaje de que se agrego el producto correctamente.
+8) Si se quiere validar, dar click en la barra superior en el apartado "Listado"

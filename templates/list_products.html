@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="text-center">
+        <h1 class="h4 text-gray-900 mb-4">LISTA DE PRODUCTOS</h1>
+    </div>
+    {% for p in productos %}
+        <div class="card bg-primary text-white shadow">
+            <div class="card-body">
+                {{ p.nombre }}
+                <div class="text-white-50 small">$ {{ p.precio }}</div>
+                <div class="text-white-50 small">$ {{ p.descripcion }}</div>
+                <div class="text-white-50 small">$ {{ p.stock }}</div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
